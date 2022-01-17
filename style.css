@@ -1,0 +1,127 @@
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+.container {
+    position           : relative;
+    width              : 100%;
+    min-height         : 100vh;
+    background-image   : url(bg.jpg);
+    background-repeat  : no-repeat;
+    background-size    : cover;
+    background-position: center center;
+    overflow           : hidden;
+    transform-style    : preserve-3d;
+}
+
+.drone-container {
+    position: absolute;
+    bottom  : 50px;
+    left    : 0;
+}
+
+.camera-container {
+    position: absolute;
+    width   : 60px;
+    top     : 110px;
+    left    : 120px;
+}
+
+.flash {
+    position                 : absolute;
+    bottom                   : 30px;
+    left                     : 5px;
+    animation-name           : flash;
+    animation-duration       : 0.5ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-play-state     : running;
+}
+
+
+.blade {
+    position: absolute;
+    top     : 46px;
+}
+
+.bladeLeft.active,
+.bladeRight.active {
+    animation-duration       : 0.2s;
+    animation-name           : spin;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-play-state     : running;
+}
+
+.bladeLeft {
+    left: 5px;
+}
+
+.bladeRight {
+    left: 224px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(-360deg);
+    }
+}
+
+@keyframes flash {
+    0% {
+        fill   : #fff;
+        opacity: 1;
+    }
+
+    11% {
+        fill: #fff;
+    }
+
+    22% {
+        fill: #fff;
+    }
+
+    55% {
+        fill: Blue;
+    }
+
+    77% {
+        fill: Blue;
+    }
+
+    100% {
+        fill: #fff;
+    }
+}
+
+.drone-container .standl {
+    position        : absolute;
+    bottom          : 5px;
+    transform       : rotate(20deg);
+    left            : 70px;
+    border-radius   : 10px;
+    width           : 5px;
+    height          : 65px;
+    background-color: blue
+}
+
+.drone-container .standr {
+    position        : absolute;
+    bottom          : 5px;
+    transform       : rotate(-20deg);
+    right           : 70px;
+    border-radius   : 10px;
+    width           : 5px;
+    height          : 65px;
+    background-color: blue
+}
